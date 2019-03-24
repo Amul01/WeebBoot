@@ -58,14 +58,14 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                  
+
                     <li>
                         <a href="update_items.html">
                             <i class="pe-7s-note2"></i>
                             <p>Update Items</p>
                         </a>
                     </li>
-                    
+
 
                 </ul>
             </div>
@@ -90,34 +90,34 @@
                 <div class="container-fluid">
                     <div class="rows container" style="width:700px;">
                         <div style="border-color: rgba(255,255,255,0.1);border-style:solid; border-width:1px; border-radius:15px;padding:20px;margin:20px;">
-                            <div class="form-group required">
-                                <label class="control-label" for="input1">Food Name: </label>
-                                <input type="text" class="form-control Food-name not-null" id="name" placeholder="Enter Food Name" required>
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label" for="input4">Category : </label>
-                                <input type="text" class="form-control Food- not-null" id="category" placeholder="Enter Food Category" required>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input5">Food Description: </label>
-                                <textarea rows="5" class="form-control Food-description not-null" id="description" placeholder="maximum 300 words" required></textarea>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input6">Food Image Url: </label>
-                                <input type="text" class="form-control Food-url not-null" id="url" placeholder="Enter Image URL" required>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input6">Price: </label>
-                                <input type="text" class="form-control Food-Price not-null" id="price" placeholder="Enter Price" required>
-                            </div>
-
-                            <div class="required text-center">
-                                <input type="button" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Update Food" required>
-                            </div>
-                            <div class="required text-center">
-                                <input type="button" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Cancel" required>
-                            </div>
+                            <form action="../php/update_items.php" method="post" enctype="multipart/form-data">
+                                <div class="form-group required">
+                                    <label class="control-label" for="input1">Food Name: </label>
+                                    <input type="text" class="form-control Food-name not-null" name="name" placeholder="Enter Food Name" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input4">Category : </label>
+                                    <input type="text" class="form-control Food- not-null" name="category" placeholder="Enter Food Category" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input5">Food Description: </label>
+                                    <textarea rows="5" class="form-control Food-description not-null" name="description" placeholder="maximum 300 words" required></textarea>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input6">Food Image Url: </label>
+                                    <input type="file" class="form-control Food-url not-null" name="url" placeholder="Enter Image URL" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input6">Price: </label>
+                                    <input type="text" class="form-control Food-Price not-null" name="price" placeholder="Enter Price" required>
+                                </div>
+                                <div class="required text-center">
+                                    <input type="submit" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Update Food" required>
+                                </div>
+                                <div class="required text-center">
+                                    <input type="button" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Cancel" required>
+                                </div>
+                            </form>
 
                         </div>
                     </div>

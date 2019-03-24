@@ -1,48 +1,41 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Food Delivery System | Restaurant</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-	<title>Food Delivery System | Restaurant</title>
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<meta name="viewport" content="width=device-width" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-functions.js"></script>
 
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
 
-	<!-- Bootstrap core CSS     -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
-	<!-- Animation library for notifications   -->
-	<link href="assets/css/animate.min.css" rel="stylesheet"/>
-
-	<!--  Light Bootstrap Table core CSS    -->
-	<link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
-
-	<!--  CSS for Demo Purpose, don't include it in your project     -->
-	<link href="assets/css/demo.css" rel="stylesheet" />
-	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-functions.js"></script>
-
-
-	<!--     Fonts and icons     -->
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-	<link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<style>
-	.form-group.required .control-label:after {
-		content:"*";
-		color: red;
-	}
-	</style>
+        .form-group.required .control-label:after {
+            content: "*";
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
-
         <div class="sidebar" data-color="purple" data-image="./assets/img/sidebar-5.jpg">
             <div class="sidebar-wrapper">
                 <div class="logo">
@@ -50,7 +43,6 @@
                         Food Delivery System
                     </a>
                 </div>
-
                 <ul class="nav">
                     <li>
                         <a href="dashboard.html">
@@ -64,7 +56,6 @@
                             <p>Add New Items</p>
                         </a>
                     </li>
-
                     <li>
                         <a href="update_items.html">
                             <i class="pe-7s-note2"></i>
@@ -77,18 +68,15 @@
                             <p>List Items </p>
                         </a>
                     </li>
-
                     <li>
                         <a href="order_list.html">
                             <i class="pe-7s-notebook"></i>
                             <p>Order List </p>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
-
         <div class="main-panel">
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
@@ -103,42 +91,40 @@
                     </div>
                 </div>
             </nav>
-
             <div class="content">
                 <div class="container-fluid">
                     <div class="rows container" style="width:700px;">
                         <div style="border-color: rgba(255,255,255,0.1);border-style:solid; border-width:1px; border-radius:15px;padding:20px;margin:20px;">
-                            <div class="form-group required">
-                                <label class="control-label" for="input1">Food Name: </label>
-                                <input type="text" class="form-control Food-name not-null" id="name" placeholder="Enter Food Name" required>
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label" for="input4">Category : </label>
-                                <input type="text" class="form-control Food-category not-null" id="category" placeholder="Enter Food Category" required>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input5">Food Description: </label>
-                                <textarea rows="5" class="form-control Food-description not-null" id="description" placeholder="maximum 300 words" required></textarea>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input6">Food Image Url: </label>
-                                <input type="text" class="form-control Food-url not-null" id="url" placeholder="Enter Image URL" required>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input6">Price: </label>
-                                <input type="text" class="form-control Food-Price not-null" id="price" placeholder="Enter Price" required>
-                            </div>
-
-                            <div class="required text-center">
-                                <input type="button" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Add Food" required>
-                            </div>
+                            <form action="..//php/add_items.php" method="post" enctype="multipart/form-data">
+                                <div class="form-group required">
+                                    <label class="control-label" for="input1">Food Name: </label>
+                                    <input type="text" class="form-control Food-name not-null" name="name" placeholder="Enter Food Name" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input4">Category : </label>
+                                    <input type="text" class="form-control Food-category not-null" name="category" placeholder="Enter Food Category" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input5">Food Description: </label>
+                                    <textarea rows="5" class="form-control Food-description not-null" name="description" placeholder="maximum 300 words" required></textarea>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input6">Food Image Url: </label>
+                                    <input type="file" class="form-control Food-url not-null" name="url" placeholder="Enter Image URL" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label" for="input6">Price: </label>
+                                    <input type="text" class="form-control Food-Price not-null" name="price" placeholder="Enter Price" required>
+                                </div>
+                                <div class="required text-center">
+                                    <input type="submit" style="margin-top:10px;margin-bottom:10px;width:70%;" class="submit-btn btn btn-primary form-control" value="Add Food" required>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <!--<script>
     var database;
@@ -214,7 +200,6 @@
         }
     });
     </script>-->
-
 </body>
 <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
