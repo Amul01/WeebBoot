@@ -1,7 +1,7 @@
 <?php
 function upload($rid,$name){
 echo $rid;
-$target_dir = "../img/r".$rid."/";
+$target_dir = "../assets/img/r".$rid."/";
 $target_file = $_FILES['url']['name'];
 //echo "hello ".$target_file;
 $uploadOk = 1;

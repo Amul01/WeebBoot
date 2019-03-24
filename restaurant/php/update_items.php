@@ -23,6 +23,7 @@ function get_client_ip() {
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
 }
+$fid=$_SESSION["fid"];
 $name = $_POST["name"];
 $category=$_POST["category"];
 $description=$_POST["description"];
@@ -30,7 +31,7 @@ $price=$_POST["price"];
 $url=$_FILES['url']['name'];
 
 
-$sql = "select * from food where name like '$name'";
+$sql = "select * from food where fid like '$fid'";
 $result = mysqli_query($conn,$sql);
 
 if(mysqli_num_rows($result)>0){

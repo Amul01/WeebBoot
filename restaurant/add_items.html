@@ -56,14 +56,9 @@
                             <p>Add New Items</p>
                         </a>
                     </li>
+
                     <li>
-                        <a href="update_items.html">
-                            <i class="pe-7s-note2"></i>
-                            <p>Update Items</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="list_items.html">
+                        <a href="./php/list_items.php">
                             <i class="pe-7s-notebook"></i>
                             <p>List Items </p>
                         </a>
@@ -95,7 +90,7 @@
                 <div class="container-fluid">
                     <div class="rows container" style="width:700px;">
                         <div style="border-color: rgba(255,255,255,0.1);border-style:solid; border-width:1px; border-radius:15px;padding:20px;margin:20px;">
-                            <form action="..//php/add_items.php" method="post" enctype="multipart/form-data">
+                            <form action="./php/add_items.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group required">
                                     <label class="control-label" for="input1">Food Name: </label>
                                     <input type="text" class="form-control Food-name not-null" name="name" placeholder="Enter Food Name" required>
