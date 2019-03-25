@@ -236,7 +236,7 @@
                                         <td>'.$category.'</td>
                                         <td>'.$ingredients.'</td>
                                         <td>'.$cost.'</td>
-                                        <td><input type="button" value="Update" "/><input type="button" value="Delete" "/></td>
+                                        <td><input type="button" value="Update" onclick=update1('.$fid.') /><input type="button" value="Delete" onclick=delete1('.$fid.') /></td>
                                     </tr>';
 									}
                                 ?>
@@ -258,7 +258,21 @@
 
 </body>
 <script>
-
+	function update1(fid)
+	{
+	
+		var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("get", "update.php/?fid="+fid, true);
+        xmlhttp.send();
+	}
+	function delete1(fid)
+	{
+	
+		var xmlhttp = new XMLHttpRequest();
+		
+        xmlhttp.open("Get", "delete.php/?fid="+fid, true);
+        xmlhttp.send();
+	}
 </script>
 <script src="../assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 

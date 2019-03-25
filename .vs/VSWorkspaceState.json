@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\restaurant",
+    "\\restaurant\\other",
+    "\\restaurant\\php"
   ],
-  "SelectedNode": "\\php",
+  "SelectedNode": "\\restaurant\\php\\login_admin.php",
   "PreviewInSolutionExplorer": false
 }
