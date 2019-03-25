@@ -38,7 +38,7 @@ if(mysqli_num_rows($result)>0){
 else {
 	$rid=$_SESSION['uid'];
 	$imageFileType = strtolower(pathinfo($_FILES["url"]["name"],PATHINFO_EXTENSION));
-	$url = "../assets/img/r".$rid."/". $name.".".$imageFileType;
+	$url = "/r".$rid."/". $name.".".$imageFileType;
 	//$rid=	(int)$_COOKIE[$cookie_name];
 	 $stmt = $conn->prepare("INSERT INTO food(rid,name,category,ingredients,cost,url) VALUES (?,?,?,?,?,?)");
     $stmt->bind_param("isssis",$rid,$name,$category,$description,$price,$url);
