@@ -230,7 +230,7 @@
 									
                                     echo '
                                     <tr>
-                                        <td><img src="'.$url.'"/></td>
+                                        <td><img src="../assets/img'.$url.'"/></td>
                                         <td>'.$fid.'</td>
                                         <td>'.$name.'</td>
                                         <td>'.$category.'</td>
