@@ -37,6 +37,8 @@ $result = mysqli_query($conn,$sql);
 if(mysqli_num_rows($result)>0){
     $row = mysqli_fetch_row($result);
     $id = $row[1];
+$imageFileType = strtolower(pathinfo($_FILES["url"]["name"],PATHINFO_EXTENSION));
+	$url = "/r".$row[0]."/". $name.".".$imageFileType;
 	$stmt = $conn->prepare("UPDATE food SET name=?,ingredients=?,category=?,cost=?,url=? WHERE fid=?");
     $stmt->bind_param("sssisi",$name,$description,$category,$price,$url,$id);
     $stmt->execute();
